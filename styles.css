@@ -1,13 +1,14 @@
 body{
-    background: url(images/nature-3126513_1920.jpg);
+    background: url(images/tree-736887_1280.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Poppins', sans-serif;
-    overflow-x:hidden;
-    overflow-y: scroll;
+      
 }
 #searchBar{
-    margin: 20% 33%;
+    position: relative;
+    left: 30rem;
+    top: 20rem;
     width: 30rem;
     height: 3rem;
     outline: none;
@@ -19,22 +20,17 @@ body{
     transform: translate(2px, 2px);
 }
 
-#button{
-    display: inline;
-    /* margin: 0 38%; */
-    
-    border-radius: 50px;
-}
-
 .weather-information{
     position: relative;
     top: -15rem;
     left: 48rem;
-    background-color:  rgba(204, 139, 106, 0.692);
+    background-color:  rgba(19, 18, 18, 0.336);
     border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
     width: 20rem;
     height: 23rem;
-    color: greenyellow;
+    color: #A58F69;
     text-align: center;
     display: none;
 }
@@ -42,11 +38,13 @@ body{
     position: relative;
     top: 7.5rem;
     left: 12rem;
-    background-color:  rgba(204, 139, 106, 0.274);
+    background-color:  rgba(19, 18, 18, 0.336);
     border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); 
     width: 20rem;
     height: 23rem;
-    color: greenyellow;
+    color:#A58F69;
     text-align: center;
     display: none;
 }
@@ -96,6 +94,16 @@ input[placeholder]{
 }
 
 @media (max-width: 991px) and (min-width: 768px){ 
+    body{
+        padding-bottom: 40rem;
+     }
+    #searchBar{
+        position: absolute;
+        left: 9rem;
+        top: 15rem;
+        width: 30rem;
+        
+    }
     .weather-information{
         position: relative;
         left:28rem; 
@@ -104,17 +112,19 @@ input[placeholder]{
     .new-york-weather-information{
         position: relative;
         width: 40%;
-        left: 3rem;
-        
+        left: 3rem;        
     }
 }
 @media (max-width: 767.98px){
     body{
-       margin-bottom: 10rem;
+       padding-bottom: 50rem;
     }
     #searchBar{
-        margin: 20% 10%;
+        position: absolute;
+        left: 0.5rem;
+        top: 15rem;
         width: 30rem;
+       
     }
     .weather-information{
         position: relative;
@@ -133,16 +143,21 @@ input[placeholder]{
     
 }
 @media (max-width: 375px){
+    body{
+        overflow-x: hidden;
+    }
     #searchBar{
-        margin: 20% 2%;
-        width: 20rem;
+        position: absolute;
+        left: 2rem;
+        top: 20rem;
+        width: 16rem;
+   
     }
     .weather-information{
         position: relative;
         left:1rem; 
         top: 6rem; 
-        width: 90%;     
-        
+        width: 90%;   
     }
     .new-york-weather-information{
         position: relative;

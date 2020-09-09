@@ -1,5 +1,6 @@
-/*const cacheName = 'weather-app';
+const cacheName = 'weather-app';
 const staticAssets = [
+    '/',
     'index.html',
     'styles.css',
     'script.js',
@@ -31,4 +32,3 @@ async function cacheFirst(req) {
     const cached = await cache.match(req);
     return cached || fetch(req); 
 }
-*/

@@ -1,7 +1,7 @@
 {
-    "name": "WeatherApp",
-    "short_name": "WeatherApp",
-    "description": "SmashIt Weather App",
+    "name": "Smash-It-Weather-App",
+    "short_name": "Smash-It-Weather-App",
+    "description": "This is a simple weather App that displays the weather of a particular location in real time",
     "icons": [
         {
             "src": "pwa-icons/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#dc6217",
-    "background_color": "#dc6217",
+    "theme_color": "#697FA5",
+    "background_color": "#697FA5",
     "start_url": "/",
     "display": "standalone",
     "orientation": "any"

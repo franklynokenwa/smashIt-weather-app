@@ -63,14 +63,13 @@ function newYorkWeatherInfo() {
             newYorkCurrentCity.textContent = newYorkWeatherDataValues.newYorkWeatherCity;
             newYorkCountry.textContent = newYorkWeatherDataValues.newYorkWeatherCountry;
             newYorkImage.src = `icons/${newYorkWeatherDataValues.newYorkWeatherIconId}.png`;
-            console.log(`icons/${newYorkWeatherDataValues.newYorkWeatherIconId}.png`);
-            console.log(newYorkImage.src);
-            console.log(`icons/${newYorkWeatherDataValues.newYorkWeatherIconId}.png`);
+           
         })
             .catch(function (error) {
             console.log(error);
             })
 } 
+city.addEventListener('change',newYorkWeatherInfo);
     
 function locationData() {
     const today = new Date();
@@ -78,23 +77,19 @@ function locationData() {
         let minutes = today.getMinutes();
         let seconds = today.getSeconds();
         let atmostphere = "";
-        
 
         if (hours > 12) {
-            hours = hours-12;
-            atmostphere = "AM";
-            // console.log((hours) + 7);
+            hours = hours-24;
+            atmostphere = "PM";
         }
         
         if((hours == 0)){
             hours = 12;
-            atmostphere = "PM";             
-               
+            atmostphere = "AM";
         }
 
         if(hours == 12){
-            atmostphere = "AM";
-                       
+            atmostphere = "AM";                       
         }
 
         if(hours < 10){
@@ -110,41 +105,10 @@ function locationData() {
             seconds = "0"+seconds;
             
         }
-            newYorkDate.textContent = `${hours}: ${minutes}: ${seconds} ${atmostphere}`;
-            return today;
-    /*
-    const locationApi = `https://api.ipgeolocation.io/timezone?apiKey=0f34dbae4a4a483cb0b3a9403671c551&location=${city.value}`;
-    fetch(locationApi)
-    .then(function (response) {
-    console.log('response received');
-    if (response.ok) {
-        console.log('SUCCESSFUL');
-    } else {
-        console.log('ERROR');
-    }
-   const data = response.json();
-   return data;
-})
-
-    .then(function timeData(data) {
-    const time = data.time_12;
-    return time
-})
-
-    .then(function(timeData) {
-        
-        const timeDataValues = timeData;
-        dateTime.textContent = timeDataValues;
-        setInterval(() => {timeDataValues+0}, 1000);
-    })
-        .catch(function (error) {
-        console.log(error);
-        })*/
+            newYorkDate.textContent = `${hours}: ${minutes}: ${seconds} ${atmostphere}`;    
 }
 
-    city.addEventListener('change',locationData);
-    // setInterval(locationData,1000);
-
+        city.addEventListener('change',locationData);
 
         function inputText() {   
             weatherInformation.style.display = 'block'; 
@@ -171,15 +135,11 @@ function locationData() {
 
                 .then(function weatherData(data) {
                 const weatherTemperatureValue = Math.floor((data.main.temp)-kelvin);
-                console.log('fine');
-                console.log(Math.floor((data.main.temp)-kelvin));
                 const weatherDescription = data.weather[0].description;
                 const weatherIconId = data.weather[0].icon;
                 const weatherCity = data.name;
                 const weatherCountry = data.sys.country;
 
-                console.log(weatherCountry,weatherTemperatureValue,weatherCity);
-                console.log(data);
 
                 return {
                     weatherCountry,
@@ -191,7 +151,6 @@ function locationData() {
                 
             })
         
-        
                 .then(function(weatherData) {
                     const weatherDataValues = weatherData;
                     weather.textContent = `${weatherDataValues.weatherTemperatureValue} °C`;
@@ -200,7 +159,6 @@ function locationData() {
                     country.textContent = weatherDataValues.weatherCountry;
                     weatherImage.src = `icons/${weatherDataValues.weatherIconId}.png`;
                     
-                    localStorage.setItem('item', weatherDataValues.weatherCountry);
                 })
                     .catch(function (error) {
                     console.log(error);
@@ -209,7 +167,7 @@ function locationData() {
                         //console.log(api); 
         } 
     city.addEventListener('change', inputText);
-/*
+
     async function registerSW() {
         if('serviceWorker' in navigator){
             try {
@@ -222,10 +180,8 @@ function locationData() {
 
     window.addEventListener('load', () => {
         registerSW();
-        weatherInformation.style.display = 'block'; 
-        newYorkWeatherInformation.style.display = 'block'; 
         
-    });*/
+    });
     newYorkWeatherInfo();
 
     function currentTime() {
@@ -268,39 +224,5 @@ function locationData() {
             date.textContent = `${hours}: ${minutes}: ${seconds} ${atmostphere}`;
             
     }   
-/*
-    const newYorkApi = `https://api.ipgeolocation.io/timezone?apiKey=0f34dbae4a4a483cb0b3a9403671c551&location=new_york`;
-    fetch(newYorkApi)
-    .then(function (response) {
-    console.log('response received');
-    if (response.ok) {
-        console.log('SUCCESSFUL');
-    } else {
-        console.log('ERROR');
-    }
-   const data = response.json();
-   return data;
-})
-
-    .then(function newYorkTimeData(data) {
-    const time = data.time_12;
-    return time;
-})
-
-    .then(function(newYorkTimeData) {
-        const newYorkTimeDataValues = newYorkTimeData;
-        // setInterval(newYorkTimeData, 1000);
-        newYorkDateTime.textContent = newYorkTimeDataValues;
-
-    //    const a = setInterval(newYorkTimeDataValues,1000);
-    //    console.log(a);
-    })*/
-        /*.catch(function (error) {
-        console.log(error);
-        })*/
 
 city.addEventListener('change', currentTime);
-// setInterval(currentTime, 1000);
-// const a = setInterval(newYorkTimeDataValues,1000);
-    //    console.log(a);
-    // console.log(newYorkTimedata);
