@@ -1,0 +1,153 @@
+body{
+    background: url(images/nature-3126513_1920.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Poppins', sans-serif;
+    overflow-x:hidden;
+    overflow-y: scroll;
+}
+#searchBar{
+    margin: 20% 33%;
+    width: 30rem;
+    height: 3rem;
+    outline: none;
+    border-radius: 50px;
+    box-shadow: 2px 2px 5px gray;
+    
+}
+#searchBar:hover{
+    transform: translate(2px, 2px);
+}
+
+#button{
+    display: inline;
+    /* margin: 0 38%; */
+    
+    border-radius: 50px;
+}
+
+.weather-information{
+    position: relative;
+    top: -15rem;
+    left: 48rem;
+    background-color:  rgba(204, 139, 106, 0.692);
+    border-radius: 20px;
+    width: 20rem;
+    height: 23rem;
+    color: greenyellow;
+    text-align: center;
+    display: none;
+}
+.new-york-weather-information{
+    position: relative;
+    top: 7.5rem;
+    left: 12rem;
+    background-color:  rgba(204, 139, 106, 0.274);
+    border-radius: 20px;
+    width: 20rem;
+    height: 23rem;
+    color: greenyellow;
+    text-align: center;
+    display: none;
+}
+
+button{
+    width: 15rem;
+    height: 3rem;
+    background-color: blueviolet;
+}
+#location{
+    display: inline-block;
+    background-color: purple;
+}
+
+img{
+    width: 5rem;
+    height: 5rem;
+}
+input[placeholder]{
+    text-align: center;
+    font-size: 1.2rem;
+}
+.weather{
+    font-size: 4rem;
+    margin: 0;
+}
+.city{
+    font-size: 2rem;
+    font-family: 'Sarala', sans-serif;
+    padding-top: 2px;
+    margin: 0;
+}
+.country{
+    font-size: 2rem;
+    font-family: 'Sarala', sans-serif;
+
+    margin: 0;
+}
+.description{
+    font-size:1rem;
+    font-family: 'Sarala', sans-serif;
+    margin: 0;
+}
+.date{
+    font-family: 'Sarala', sans-serif;
+
+}
+
+@media (max-width: 991px) and (min-width: 768px){ 
+    .weather-information{
+        position: relative;
+        left:28rem; 
+        width: 40%;
+    }
+    .new-york-weather-information{
+        position: relative;
+        width: 40%;
+        left: 3rem;
+        
+    }
+}
+@media (max-width: 767.98px){
+    body{
+       margin-bottom: 10rem;
+    }
+    #searchBar{
+        margin: 20% 10%;
+        width: 30rem;
+    }
+    .weather-information{
+        position: relative;
+        left:1rem; 
+        top: 6rem; 
+        width: 90%;     
+        
+    }
+    .new-york-weather-information{
+        position: relative;
+        left:1rem;
+        width: 35%;
+        top: 1rem;
+        width: 90%;
+    }
+    
+}
+@media (max-width: 375px){
+    #searchBar{
+        margin: 20% 2%;
+        width: 20rem;
+    }
+    .weather-information{
+        position: relative;
+        left:1rem; 
+        top: 6rem; 
+        width: 90%;     
+        
+    }
+    .new-york-weather-information{
+        position: relative;
+        left:1rem;
+        top: 1rem;
+        width: 90%;
+    }
+}
