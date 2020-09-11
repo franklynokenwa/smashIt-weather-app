@@ -1,9 +1,12 @@
 body{
-    background: url(images/tree-736887_1280.jpg);
+    background: url(./images/tree-736887_1280.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Poppins', sans-serif;
-      
+    font-family: 'Poppins', sans-serif;   
+    height: 100%; 
+    margin: 0;
+    padding:0
+
 }
 #searchBar{
     position: relative;
@@ -13,11 +16,20 @@ body{
     height: 3rem;
     outline: none;
     border-radius: 50px;
-    box-shadow: 2px 2px 5px gray;
-    
+    box-shadow: 2px 2px 5px #697FA5;
+    border: none;
+    text-align: center;
+        
 }
-#searchBar:hover{
+#searchBar:focus{
     transform: translate(2px, 2px);
+    border:2px solid blueviolet;
+}
+#searchBar::placeholder{
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: 'Sarala', sans-serif;
+    color: #697FA5;
 }
 
 .weather-information{
@@ -38,7 +50,7 @@ body{
     position: relative;
     top: 7.5rem;
     left: 12rem;
-    background-color:  rgba(19, 18, 18, 0.336);
+    background-color:  rgba(19, 18, 18, 0.144);
     border-radius: 20px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px); 
@@ -63,10 +75,7 @@ img{
     width: 5rem;
     height: 5rem;
 }
-input[placeholder]{
-    text-align: center;
-    font-size: 1.2rem;
-}
+
 .weather{
     font-size: 4rem;
     margin: 0;
@@ -144,25 +153,32 @@ input[placeholder]{
 }
 @media (max-width: 375px){
     body{
-        overflow-x: hidden;
+        margin: 0;
+        
+        background-size: cover;
+        
     }
     #searchBar{
         position: absolute;
-        left: 2rem;
+        left: 1.6rem;
         top: 20rem;
-        width: 16rem;
-   
+        width:20rem;
+    }
+    #searchBar::placeholder{
+        font-size: 1rem;        
     }
     .weather-information{
         position: relative;
         left:1rem; 
         top: 6rem; 
-        width: 90%;   
+        width: 90%;  
+        margin-bottom: -30rem; 
     }
     .new-york-weather-information{
         position: relative;
         left:1rem;
-        top: 1rem;
+        top: 5rem;
         width: 90%;
+        margin-bottom: 4rem;
     }
 }

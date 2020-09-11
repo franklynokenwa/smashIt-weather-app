@@ -79,8 +79,12 @@ function locationData() {
         let atmostphere = "";
 
         if (hours > 12) {
-            hours = hours-24;
+            hours = hours-12;
             atmostphere = "PM";
+        }
+        if (hours < 12) {
+            hours = hours;
+            atmostphere = "AM";
         }
         
         if((hours == 0)){
@@ -172,6 +176,7 @@ function locationData() {
         if('serviceWorker' in navigator){
             try {
                 await navigator.serviceWorker.register('serviceWorker.js');
+                console.log('gooddd');
             } catch (error) {
                 console.log('service worker failed');
             }
